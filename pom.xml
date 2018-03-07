@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.rainmanwy.robotframework</groupId>
 	<artifactId>robotframework-SikuliLibrary</artifactId>
 	<version>1.0</version>
@@ -11,13 +11,13 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-    <repositories>
+	<repositories>
 		<repository>
-      <!-- OSSRH: com.sikulix -->
+			<!-- OSSRH: com.sikulix -->
 			<name>com.sikulix</name>
 			<id>com.sikulix</id>
 			<url>https://oss.sonatype.org/content/groups/public</url>
-			<!--layout>default</layout-->
+			<!--layout>default</layout -->
 			<releases>
 				<enabled>true</enabled>
 				<updatePolicy>always</updatePolicy>
@@ -27,12 +27,12 @@
 				<updatePolicy>always</updatePolicy>
 			</snapshots>
 		</repository>
-        <repository>
-      <!-- OSSRH: com.sikulix -->
+		<repository>
+			<!-- OSSRH: com.sikulix -->
 			<name>jxgrabkey</name>
 			<id>jxgrabkey</id>
 			<url>https://labs.consol.de/maven/repository/</url>
-			<!--layout>default</layout-->
+			<!--layout>default</layout -->
 			<releases>
 				<enabled>true</enabled>
 				<updatePolicy>always</updatePolicy>
@@ -43,9 +43,107 @@
 			</snapshots>
 		</repository>
 	</repositories>
-    
-    
+
+
 	<dependencies>
+		<dependency>
+			<groupId>net.sourceforge.tess4j</groupId>
+			<artifactId>tess4j</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>tesseract-platform</artifactId>
+			<version>3.04.01-1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-chrome-driver</artifactId>
+			<version>3.10.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.9.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-api</artifactId>
+			<version>3.9.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.14.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.sikuli</groupId>
+			<artifactId>sikuli-api</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.sikuli</groupId>
+			<artifactId>sikuli-core</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.sikuli</groupId>
+			<artifactId>sikuli-webdriver</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sikulix</groupId>
+			<artifactId>sikulixapi</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.11</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.kohsuke</groupId>
+			<artifactId>trilead-putty-extension</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.bytedeco</groupId>
+			<artifactId>javacv</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.bytedeco</groupId>
+			<artifactId>javacpp</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>opencv-platform</artifactId>
+			<version>3.2.0-1.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.humble</groupId>
+			<artifactId>humble-video-all</artifactId>
+			<version>0.2.1</version>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -57,22 +155,19 @@
 			<artifactId>sikulixapi</artifactId>
 			<version>1.1.1</version>
 		</dependency>
-        <!--dependency>
-            <groupId>org.robotframework</groupId>
-            <artifactId>javalib-core</artifactId>
-            <version>1.2.1</version>
-        </dependency-->
-        <dependency>
-            <groupId>com.github.ombre42</groupId>
-            <artifactId>jrobotremoteserver</artifactId>
-            <version>3.0</version>
-        </dependency>
+		<!--dependency> <groupId>org.robotframework</groupId> <artifactId>javalib-core</artifactId> 
+			<version>1.2.1</version> </dependency -->
+		<dependency>
+			<groupId>com.github.ombre42</groupId>
+			<artifactId>jrobotremoteserver</artifactId>
+			<version>3.0</version>
+		</dependency>
 
 
 	</dependencies>
 
 	<build>
-        <sourceDirectory>src/java</sourceDirectory>
+		<sourceDirectory>src/java</sourceDirectory>
 		<plugins>
 
 			<plugin>
@@ -84,52 +179,27 @@
 				</configuration>
 			</plugin>
 
-			<!--plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>com.github.rainmanwy.robotframework.sikulilib.SikuliLibrary</mainClass>
-							<addClasspath>true</addClasspath>
-							<classpathPrefix>dependency-jars/</classpathPrefix>
-						</manifest>
-					</archive>
-					<finalName>SikuliLibrary</finalName>
-				</configuration>
-			</plugin-->
-			
-			
-            <!--plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.5.1</version>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <includeScope>runtime</includeScope>
-                            <outputDirectory>${project.build.directory}/dependency-jars/
-                            </outputDirectory>
+			<!--plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> 
+				<version>2.4</version> <configuration> <archive> <manifest> <mainClass>com.github.rainmanwy.robotframework.sikulilib.SikuliLibrary</mainClass> 
+				<addClasspath>true</addClasspath> <classpathPrefix>dependency-jars/</classpathPrefix> 
+				</manifest> </archive> <finalName>SikuliLibrary</finalName> </configuration> 
+				</plugin -->
 
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin-->
+
+			<!--plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-dependency-plugin</artifactId> 
+				<version>2.5.1</version> <executions> <execution> <id>copy-dependencies</id> 
+				<phase>package</phase> <goals> <goal>copy-dependencies</goal> </goals> <configuration> 
+				<includeScope>runtime</includeScope> <outputDirectory>${project.build.directory}/dependency-jars/ 
+				</outputDirectory> </configuration> </execution> </executions> </plugin -->
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.6</version>
 				<configuration>
-					<!--descriptor>package.xml</descriptor-->
+					<!--descriptor>package.xml</descriptor -->
 					<finalName>SikuliLibrary</finalName>
-                    <appendAssemblyId>false</appendAssemblyId>
+					<appendAssemblyId>false</appendAssemblyId>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
@@ -148,17 +218,17 @@
 							<goal>single</goal>
 						</goals>
 					</execution>
-                    <execution>
+					<execution>
 						<id>dist</id>
 						<phase>package</phase>
 						<goals>
 							<goal>single</goal>
 						</goals>
-                        <configuration>
-                            <descriptors>
-                                <descriptor>assembly.xml</descriptor>
-                            </descriptors>
-                        </configuration>
+						<configuration>
+							<descriptors>
+								<descriptor>assembly.xml</descriptor>
+							</descriptors>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -179,12 +249,12 @@
 								<exec dir="target/src" executable="python" failonerror="true">
 									<arg line="-m SikuliLibrary.__init__" />
 								</exec>
-								<!--<unzip src="output/inner.zip" dest="output" />-->
-								<!--<unzip dest="output">-->
-								  <!--<fileset dir="archives">-->
-									<!--<include name="prefix*.zip" />-->
-								  <!--</fileset>-->
-								<!--</unzip>-->
+								<!--<unzip src="output/inner.zip" dest="output" /> -->
+								<!--<unzip dest="output"> -->
+								<!--<fileset dir="archives"> -->
+								<!--<include name="prefix*.zip" /> -->
+								<!--</fileset> -->
+								<!--</unzip> -->
 							</tasks>
 						</configuration>
 						<goals>
